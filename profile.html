@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        /* Reset and basic styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header styles */
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .site-title {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        
+        .main-nav {
+            text-align: right;
+        }
+        
+        .main-nav ul {
+            list-style-type: none;
+        }
+        
+        .main-nav ul li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+        
+        .main-nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .main-nav ul li a:hover {
+            color: #ffd700;
+        }
+        
+        /* Section styles */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .about-content {
+            text-align: center;
+        }
+        
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Portfolio styles */
+        .portfolio-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-out;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
+        
+        .project-title {
+            color: #fff;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .project-description {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .project-link {
+            display: inline-block;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .project-link:hover {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        /* Contact form styles */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .contact-form textarea {
+            resize: vertical;
+        }
+        
+        .contact-form button {
+            display: block;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .contact-form button:hover {
+            background-color: #555;
+        }
+        
+        /* Footer styles */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        .footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+        
+            </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="site-title">Saim's Portfolio</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <img src="pic.jpeg" alt="Muhammad Saim" class="profile-pic">
+                        <h5>
+
+                            "Hello! My name is Muhammad Saim, and I'm excited to connect with you. As a skilled web developer, I hold special certifications in HTML, CSS, JavaScript, and Bootstrap JavaScript. With over a year of experience in the field, I've honed my skills in creating dynamic and user-friendly websites.<br>
+                            
+                            Currently, I'm working with Keytech Software House, where I've had the opportunity to work on various projects and expand my expertise. In addition to my technical skills, I'm also well-versed in developing e-commerce sites, having successfully developed and launched several online stores.<br>
+                            
+                            I'm passionate about using my skills to help others, and I'm here to assist you with any web development needs you may have. Whether it's building a website from scratch, optimizing an existing site, or providing guidance on best practices, I'm committed to delivering high-quality results.<br>
+                            
+                            Feel free to reach out to me with any questions or projects you'd like to discuss. I'm looking forward to collaborating with you and bringing your web development vision to life!"<br>
+                            </h5>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section portfolio">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            <div class="portfolio-items">
+                <div class="portfolio-item">
+                    <img src="km1.png" alt="Project 1">
+                    <div class="overlay">
+                        <h3 class="project-title">Project 1</h3>
+                        <p class="project-description">This E-commerce site Was also Created by Me. Watch it if you Interested then contact me.</p>
+                        <a href="https://keymart.store" class="project-link">keymart</a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="p.png" alt="Project 2">
+                    <div class="overlay">
+                        <h3 class="project-title">Project 2</h3>
+                        <p class="project-description">This E-commerce site Was Created by Me. Watch it if you Interested then contact me.</p>
+                        <a href="https://pointofpeople.company.site" class="project-link">View Project</a>
+                    </div>
+                </div>
+                <!-- Add more portfolio items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <h3>You can Contact On these Contact info</h3>
+            <b>Whatsapp/Phone:</b><br>
+            <p>+923131471263</p>
+            <b>Email:</b><br>
+            <p>pakistanizindabad820@gmail.com</p>
+       </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Muhammad Saim. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
